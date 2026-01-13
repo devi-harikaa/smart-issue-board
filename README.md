@@ -78,6 +78,7 @@ smart-issue-board/
 ├── package.json
 └── README.md
 
+```
 ## 🔐 Environment Variables
 
 Create a `.env` file in the project root:
@@ -90,6 +91,9 @@ VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
 VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 VITE_FIREBASE_APP_ID=your_app_id
 ⚠️ These variables must also be added in Vercel → Project Settings → Environment Variables
+
+
+```
 
 ▶️ Run Locally
 bash
