@@ -107,11 +107,3 @@ graphql
 Copy code
 Email: test.issue.board@gmail.com
 Password: test@123
-📦 Deployment
-The project is deployed on Vercel with:
-
-npm run build
-
-Output directory: dist
-
-Firebase domain added to authorized domains
