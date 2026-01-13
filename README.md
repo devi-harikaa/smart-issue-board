@@ -137,7 +137,7 @@ VITE_FIREBASE_APP_ID=your_app_id
 
 
 These variables must also be added in **Vercel → Project Settings → Environment Variables**.
-
+```
 ---
 
 ## Run Locally
@@ -147,7 +147,21 @@ npm install
 npm run dev
 ```
 
-
+<img width="1907" height="979" alt="Screenshot 2026-01-13 212712" src="https://github.com/user-attachments/assets/23c3dd3c-c7de-40fa-8c2c-9e5f82fefc2d" />
+<img width="1850" height="937" alt="Screenshot 2026-01-13 210117" src="https://github.com/user-attachments/assets/e4ce4156-87c1-4e54-a3ad-a78f56009d36" />
+<img width="1886" height="1133" alt="Screenshot 2026-01-13 205843" src="https://github.com/user-attachments/assets/010db660-0981-4447-b9cf-212fc806e80c" />
+<img width="1911" height="998" alt="Screenshot 2026-01-13 205832" src="https://github.com/user-attachments/assets/fcacacf4-5d79-4dff-be28-af10afd2f029" />
+<img width="1912" height="1041" alt="Screenshot 2026-01-13 205756" src="https://github.com/user-attachments/assets/6db5f983-927a-4036-988c-e82b8e2851bf" />
+<img width="1918" height="1059" alt="Screenshot 2026-01-13 205732" src="https://github.com/user-attachments/assets/f0715122-a855-4f87-a2f3-496ce69dc86d" />
+<img width="1892" height="1038" alt="Screenshot 2026-01-13 205613" src="https://github.com/user-attachments/assets/e2d46891-3074-4663-b30b-718262dbf539" />
+<img width="1902" height="964" alt="Screenshot 2026-01-13 205554" src="https://github.com/user-attachments/assets/23b64ccd-a629-4156-ab34-fc4a849ccae2" />
+<img width="1850" height="937" alt="Screenshot 2026-01-13 210117" src="https://github.com/user-attachments/assets/bdbc9b65-cee1-41cb-b4b8-a17c71401691" />
+<img width="1886" height="1133" alt="Screenshot 2026-01-13 205843" src="https://github.com/user-attachments/assets/da506cff-53d6-47a6-8247-d515bdde845b" />
+<img width="1911" height="998" alt="Screenshot 2026-01-13 205832" src="https://github.com/user-attachments/assets/3ef2af52-a7fc-4876-bac0-46682de93bbf" />
+<img width="1912" height="1041" alt="Screenshot 2026-01-13 205756" src="https://github.com/user-attachments/assets/b25226f2-f835-4ad1-9c84-34914354547d" />
+<img width="1918" height="1059" alt="Screenshot 2026-01-13 205732" src="https://github.com/user-attachments/assets/5a05deda-913d-4ebe-93dc-6c71dc96f4bf" />
+<img width="1892" height="1038" alt="Screenshot 2026-01-13 205613" src="https://github.com/user-attachments/assets/f5d396a9-ad06-4704-964f-264eaa1ec03a" />
+<img width="1902" height="964" alt="Screenshot 2026-01-13 205554" src="https://github.com/user-attachments/assets/bde2ef60-942e-4358-98ef-855588badff0" />
 Open: http://localhost:5173
 
 ---
