@@ -1,65 +1,152 @@
-# Smart Issue Board
+🧩 Smart Issue Board
 
-A lightweight issue tracking web application built using **React**, **Firebase**, and **Tailwind CSS**.  
-The application allows multiple authenticated users to collaboratively create, view, and manage issues with controlled status transitions.
+Smart Issue Board is a lightweight issue-tracking web application built using React, Firebase, and Tailwind CSS.
+It enables multiple authenticated users to collaboratively create, view, and manage issues with controlled status transitions and real-time updates.
 
----
+🚀 Live Demo
 
-## 🚀 Live Demo
+👉 Vercel Deployment
+https://smart-issue-board-six.vercel.app/
 
-👉 Deployed on Vercel:  
-`<(https://smart-issue-board-six.vercel.app/)>`
+✨ Features
 
----
+🔐 Authentication
 
-## ✨ Features
+Email & Password login and signup using Firebase Authentication
 
-- 🔐 **Authentication**
-  - Email & Password login/signup using Firebase Authentication
-- 📝 **Issue Management**
-  - Create issues with title, description, priority, and assignee
-  - All issues are created in an **Open** state by design
-- 🔄 **Status Workflow**
-  - Issues can move from:
-    - Open → In Progress → Done
-  - Direct Open → Done transitions are intentionally blocked
-- 🧠 **Smart Detection**
-  - Warns users when creating an issue with a similar title
-- 🔍 **Filtering**
-  - Filter issues by status and priority
-- 👥 **Collaborative Board**
-  - All authenticated users can view and manage issues (team-style board)
-- 🎨 **UI**
-  - Responsive UI built with Tailwind CSS
+📝 Issue Management
 
----
+Create issues with title, description, priority, and assignee
 
-## 🧠 Design Decisions
+All issues are created in the Open state by design
 
-- **Default Status = Open**  
-  All new issues start as `Open` to maintain workflow integrity. Status changes are explicitly handled after creation.
+🔄 Status Workflow
 
-- **Shared Issue Board**  
-  The app simulates a real-world team issue tracker where all users can see and collaborate on issues.
+Allowed transitions:
 
-- **Client-Side Validation + Firestore Rules**  
-  Status transition rules are enforced at the UI level and can be further secured using Firestore security rules.
+Open → In Progress → Done
 
----
+Direct Open → Done transitions are intentionally blocked
 
-## 🛠 Tech Stack
+🧠 Smart Issue Detection
 
-- **Frontend:** React (Vite)
-- **Styling:** Tailwind CSS
-- **Backend / Auth:** Firebase Authentication
-- **Database:** Firebase Firestore
-- **Deployment:** Vercel
+Warns users when creating an issue with a similar title
 
----
+🔍 Filtering
 
-## 📁 Project Structure
+Filter issues by status and priority
 
-```text
+👥 Collaborative Board
+
+All authenticated users can view and manage the same set of issues
+
+🎨 Responsive UI
+
+Clean and responsive interface built using Tailwind CSS
+
+🛠 Tech Stack & Justification
+Frontend
+
+React (Vite)
+
+Component-based architecture for maintainability
+
+Vite provides fast startup and hot module replacement
+
+Tailwind CSS
+
+Utility-first styling for rapid UI development
+
+Avoids large custom CSS files
+
+Backend & Database
+
+Firebase Firestore
+
+Real-time data synchronization
+
+Scales easily for collaborative applications
+
+Authentication
+
+Firebase Authentication
+
+Secure and easy Email/Password authentication
+
+Handles session management automatically
+
+Deployment
+
+Vercel
+
+Seamless GitHub integration
+
+Optimized for modern React applications
+
+📊 Firestore Data Structure
+
+All issues are stored in a single Firestore collection:
+
+issues (collection)
+ └── issueId (document)
+     ├── title: string
+     ├── description: string
+     ├── priority: "Low" | "Medium" | "High"
+     ├── status: "Open" | "In Progress" | "Done"
+     ├── assignedTo: string
+     ├── createdBy: string (user email)
+     └── createdAt: timestamp
+
+
+Issues are ordered by createdAt (newest first)
+
+Real-time updates are handled using Firestore listeners
+
+🧠 Smart Logic Implementation
+Similar Issue Handling
+
+Before saving a new issue, existing issues are queried
+
+A case-insensitive substring match is performed on the title
+
+If a similar issue is found:
+
+A warning message is shown
+
+The user can Confirm (create anyway) or Cancel
+
+Status Transition Rule
+
+An issue cannot move directly from Open to Done
+
+The UI blocks this transition
+
+A friendly message explains that the issue must first move to In Progress
+
+🧩 Challenges & Reflections
+Challenges
+
+Correctly configuring Firebase environment variables with Vite
+
+Managing real-time Firestore listeners alongside local React state
+
+Confusing Parts
+
+Ensuring the “similar issue” warning only triggers during creation and not during real-time updates
+
+⏭️ Future Improvements
+
+If given more time, the following enhancements would be implemented:
+
+🔍 NLP-based similarity detection instead of simple string matching
+
+📋 Kanban-style drag and drop board
+
+💬 Comments and activity history per issue
+
+👤 Role-based access control (Admin vs User)
+
+📁 Project Structure
 smart-issue-board/
 ├── public/
 │   └── vite.svg
@@ -78,35 +165,39 @@ smart-issue-board/
 ├── package.json
 └── README.md
 
-```
-## 🔐 Environment Variables
+🔐 Environment Variables
 
-Create a `.env` file in the project root:
+Create a .env file in the project root:
 
-```env
 VITE_FIREBASE_API_KEY=your_key
 VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
 VITE_FIREBASE_PROJECT_ID=your_project_id
 VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
 VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 VITE_FIREBASE_APP_ID=your_app_id
-⚠️ These variables must also be added in Vercel → Project Settings → Environment Variables
 
 
-```
+⚠️ These variables must also be added in
+Vercel → Project Settings → Environment Variables
 
 ▶️ Run Locally
-bash
-Copy code
 npm install
 npm run dev
+
+
 Open: http://localhost:5173
 
 🧪 Test Credentials (Example)
-graphql
-Copy code
 Email: test.issue.board@gmail.com
 Password: test@123
+
+📌 Notes
+
+Multiple users can log in and collaborate on the same issue board
+
+Firebase credentials are excluded from version control
+
+Designed as an interview assignment with focus on clarity and correctness
 
 🧠 Technical Decisions & Reflections
 1️⃣ Why did you choose the frontend stack?
