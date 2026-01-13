@@ -58,7 +58,6 @@ The application allows multiple authenticated users to collaboratively create, v
 ---
 
 ## 📁 Project Structure
-
 smart-issue-board/
 ├── public/
 ├── src/
@@ -75,12 +74,6 @@ smart-issue-board/
 ├── vite.config.js
 ├── package.json
 └── README.md
-
-yaml
-Copy code
-
----
-
 ## 🔐 Environment Variables
 
 Create a `.env` file in the project root:
