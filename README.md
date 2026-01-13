@@ -58,14 +58,17 @@ The application allows multiple authenticated users to collaboratively create, v
 ---
 
 ## 📁 Project Structure
+
+```text
 smart-issue-board/
 ├── public/
+│   └── vite.svg
 ├── src/
-│ ├── App.jsx
-│ ├── main.jsx
-│ ├── firebase.js
-│ ├── index.css
-│ └── assets/
+│   ├── assets/
+│   ├── App.jsx
+│   ├── main.jsx
+│   ├── firebase.js
+│   └── index.css
 ├── index.html
 ├── .env
 ├── .gitignore
@@ -74,6 +77,7 @@ smart-issue-board/
 ├── vite.config.js
 ├── package.json
 └── README.md
+
 ## 🔐 Environment Variables
 
 Create a `.env` file in the project root:
