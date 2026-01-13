@@ -8,7 +8,7 @@ The application allows multiple authenticated users to collaboratively create, v
 ## 🚀 Live Demo
 
 👉 Deployed on Vercel:  
-`<PASTE YOUR VERCEL URL HERE>`
+`<(https://smart-issue-board-six.vercel.app/)>`
 
 ---
 
@@ -107,3 +107,85 @@ graphql
 Copy code
 Email: test.issue.board@gmail.com
 Password: test@123
+
+🧠 Technical Decisions & Reflections
+1️⃣ Why did you choose the frontend stack?
+
+React was chosen for its component-based architecture and ecosystem maturity.
+
+Vite provides fast startup and hot module replacement, ideal for rapid development.
+
+Tailwind CSS enables consistent styling with minimal custom CSS, speeding up UI work.
+
+The stack is modern, lightweight, and suitable for real-time Firebase-backed apps.
+
+2️⃣ Firestore Data Structure
+
+Firestore uses a flat collection-based structure:
+'''
+issues (collection)
+ └── issueId (document)
+     ├── title: string
+     ├── description: string
+     ├── priority: "Low" | "Medium" | "High"
+     ├── status: "Open" | "In Progress" | "Done"
+     ├── assignedTo: string
+     ├── createdBy: string (user email)
+     └── createdAt: timestamp
+
+'''
+Real-time updates are handled using onSnapshot.
+
+Issues are ordered by createdAt for newest-first display.
+
+Authentication data is handled separately via Firebase Auth.
+
+3️⃣ Handling Similar / Duplicate Issues
+
+Before creating a new issue:
+
+Existing issues are fetched from Firestore
+
+Titles are compared using case-insensitive substring matching
+
+If a similar issue is detected, the user receives a warning
+
+The user can choose to cancel or proceed anyway
+
+This reduces duplicates while preserving user control.
+
+4️⃣ What Was Challenging?
+
+Correctly configuring Firebase Authentication and Firestore rules
+
+Managing environment variables across local and Vercel deployments
+
+Handling authentication state and Firestore listeners together without race conditions
+
+These were resolved through incremental testing and clear separation of concerns.
+
+5️⃣ What Would Be Improved Next?
+
+Given more time, the following enhancements would be added:
+
+Role-based access control (Admin vs User)
+
+Full-text search instead of simple title matching
+
+Issue comments and activity logs
+
+Pagination for large issue lists
+
+Better UI feedback for loading and error states
+
+📌 Notes
+
+Multiple users can log in and see the same shared issue board.
+
+Status cannot move directly from Open → Done by design.
+
+Firebase credentials are intentionally excluded from version control.
+
+📜 License
+
+This project was built as part of an interview assignment and is intended for evaluation purposes.
